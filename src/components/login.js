@@ -22,8 +22,10 @@ const Login = () => {
 					...formData,
 				}
 			);
+
 			if (data.status === "success") {
-				navigate("/posts");
+				localStorage.setItem("token", data.token);
+				navigate("/profile");
 			}
 		} else {
 			setFormValidated(true);
